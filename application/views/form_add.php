@@ -17,7 +17,7 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<h1>Tambah Artikel</h1>
-			<?php echo form_open(); ?>
+			<?php echo form_open_multipart(); ?>
 			<div class="form-group">
 				<?php echo form_label('Judul', 'title') ?>
 				<?php echo form_input('title', null, 'class="form-control"'); ?>
@@ -29,6 +29,10 @@
 			<div class="form-group">
 				<?php echo form_label('Konten', 'content') ?>
 				<?php echo form_textarea('content', null, 'class="form-control"'); ?>
+			</div>
+			<div class="form-group">
+				<?php echo form_label('Cover', 'cover') ?>
+				<?php echo form_upload('cover', null, 'class="form-control"'); ?>
 			</div>
 			<?php echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"')  ?>
 			<?php echo form_close(); ?>

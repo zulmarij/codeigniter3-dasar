@@ -1,7 +1,7 @@
 <?php $this->load->view('partials/header'); ?>
 
 <!-- Page Header -->
-<header class="masthead" style="background-image: url('<?php echo base_url(); ?>/assets/img/post-bg.jpg')">
+<header class="masthead" style="background-image: url('<?php echo base_url(); ?>uploads/<?php echo $blog->cover; ?>')">
 	<div class="overlay"></div>
 	<div class="container">
 		<div class="row">
