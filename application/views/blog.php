@@ -13,8 +13,8 @@
 
 	<?php foreach ($blogs as $key => $blog) : ?>
 		<div class="blog">
-			<h2><?php echo $blog['title'] ?></h2>
-			<?php echo $blog['content'] ?>
+			<h2><?php echo $blog->title ?></h2>
+			<p><?php echo $blog->content ?></p>
 		</div>
 	<?php endforeach; ?>
 </body>
