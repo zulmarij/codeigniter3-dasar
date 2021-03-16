@@ -41,7 +41,6 @@ class Blog extends CI_Controller
 			$config['max_height']           = 768;
 
 			$this->load->library('upload', $config);
-
 			if (!$this->upload->do_upload('cover')) {
 				echo $this->upload->display_errors();
 			} else {
