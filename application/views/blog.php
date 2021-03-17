@@ -19,6 +19,7 @@
 <div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-10 mx-auto">
+		<?php echo $this->session->flashdata('message'); ?>
 			<form>
 				<input type="search" name="find" id="">
 				<button type="submit">Cari</button>
@@ -33,7 +34,7 @@
 					<p class="post-meta">Posted on
 						<?php echo $blog->date; ?>
 						<a href="<?php echo site_url('blog/edit/' . $blog->id) ?>">Edit</a>
-						<a href="<?php echo site_url('blog/delete/' . $blog->id) ?>">Delete</a>
+						<a href="<?php echo site_url('blog/delete/' . $blog->id) ?>" onclick="return confirm('Apa kamu yakin akan menghapus?')">Delete</a>
 					</p>
 					<p><?php echo $blog->content; ?></p>
 				</div>
