@@ -36,7 +36,7 @@
 
 			echo '<div class="form-group">';
 			echo form_label('Cover', 'cover');
-			echo form_upload('cover', $blog->cover, 'class="form-control"');
+			echo form_upload('cover', null, 'class="form-control"');
 			echo '</div>';
 
 			echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"');
