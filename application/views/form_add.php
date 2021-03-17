@@ -21,22 +21,27 @@
 				<?php echo validation_errors() ?>
 			</div>
 			<?php echo form_open_multipart();
+
 			echo '<div class="form-group">';
 			echo form_label('Judul', 'title');
 			echo form_input('title', null, 'class="form-control"');
 			echo '</div>';
+			
 			echo '<div class="form-group">';
 			echo form_label('URL', 'url');
 			echo form_input('url', null, 'class="form-control"');
 			echo '</div>';
+			
 			echo '<div class="form-group">';
 			echo form_label('Konten', 'content');
 			echo form_textarea('content', null, 'class="form-control"');
 			echo '</div>';
+			
 			echo '<div class="form-group">';
 			echo form_label('Cover', 'cover');
 			echo form_upload('cover', null, 'class="form-control"');
 			echo '</div>';
+			
 			echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"');
 			echo form_close(); ?>
 		</div>
