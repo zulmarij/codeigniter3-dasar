@@ -38,9 +38,18 @@
 					<li class="nav-item">
 						<a class="nav-link" href="/">Home</a>
 					</li>
+					<?php if (isset($this->session->username)) : ?>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo site_url('blog/add') ?>">Tambah Artikel</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo site_url('blog/logout') ?>">Logout</a>
+					</li>
+					<?php else : ?>
+						<li class="nav-item">
+						<a class="nav-link" href="<?php echo site_url('blog/login') ?>">Login</a>
+					</li>
+					<?php endif; ?>
 				</ul>
 			</div>
 		</div>

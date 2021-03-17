@@ -122,7 +122,34 @@ class Blog extends CI_Controller
 			$this->session->set_flashdata('message', '<div class="alert alert-success">Data berhasil dihapus</div>');
 		else
 			$this->session->set_flashdata('message', '<div class="alert alert-warning">Data berhasil dihapus</div>');
-			
+
+		redirect('/');
+	}
+
+	public function login()
+	{
+        if ($this->input->post()) {
+            $username = $this->input->post('username');
+            $password = $this->input->post('password');
+
+            if ($username == 'admin' && $password == 'password') {
+                $this->session->username = 'admin';
+            
+                redirect('/');
+            } else {
+                $this->session->set_flashdata('message', '<div class="alert alert-warning">Username/Password tidak valid</div>');
+
+                redirect('blog/login');
+            }
+        }
+
+		$this->load->view('login');
+	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+
 		redirect('/');
 	}
 }
