@@ -24,24 +24,24 @@
 
 			echo '<div class="form-group">';
 			echo form_label('Judul', 'title');
-			echo form_input('title', null, 'class="form-control"');
+			echo form_input('title', set_value('title'), 'class="form-control"');
 			echo '</div>';
-			
+
 			echo '<div class="form-group">';
 			echo form_label('URL', 'url');
-			echo form_input('url', null, 'class="form-control"');
+			echo form_input('url', set_value('url'), 'class="form-control"');
 			echo '</div>';
-			
+
 			echo '<div class="form-group">';
 			echo form_label('Konten', 'content');
-			echo form_textarea('content', null, 'class="form-control"');
+			echo form_textarea('content', set_value('content'), 'class="form-control"');
 			echo '</div>';
-			
+
 			echo '<div class="form-group">';
 			echo form_label('Cover', 'cover');
 			echo form_upload('cover', null, 'class="form-control"');
 			echo '</div>';
-			
+
 			echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"');
 			echo form_close(); ?>
 		</div>
