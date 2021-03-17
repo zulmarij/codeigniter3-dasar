@@ -17,6 +17,9 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<h1>Tambah Artikel</h1>
+			<div class="alert alert-warning">
+				<?php echo validation_errors() ?>
+			</div>
 			<?php echo form_open_multipart();
 			echo '<div class="form-group">';
 			echo form_label('Judul', 'title');

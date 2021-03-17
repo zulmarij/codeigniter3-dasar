@@ -29,7 +29,11 @@ class Blog extends CI_Controller
 
 	public function add()
 	{
-		if ($this->input->post()) {
+		$this->form_validation->set_rules('title', 'Judul', 'required');
+		$this->form_validation->set_rules('url', 'URL', 'required');
+		$this->form_validation->set_rules('content', 'Konten', 'required');
+
+		if ($this->form_validation->run()) {
 			$data['title'] = $this->input->post('title');
 			$data['url'] = $this->input->post('url');
 			$data['content'] = $this->input->post('content');
