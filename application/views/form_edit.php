@@ -17,21 +17,24 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<h1>Edit Artikel</h1>
+			<div class="alert alert-warning">
+				<?php echo validation_errors() ?>
+			</div>
 			<?php echo form_open_multipart();
 
 			echo '<div class="form-group">';
 			echo form_label('Judul', 'title');
-			echo form_input('title', $blog->title, 'class="form-control"');
+			echo form_input('title', set_value('title', $blog->title), 'class="form-control"');
 			echo '</div>';
 
 			echo '<div class="form-group">';
 			echo form_label('URL', 'url');
-			echo form_input('url', $blog->url, 'class="form-control"');
+			echo form_input('url', set_value('url', $blog->url), 'class="form-control"');
 			echo '</div>';
 
 			echo '<div class="form-group">';
 			echo form_label('Konten', 'content');
-			echo form_textarea('content', $blog->content, 'class="form-control"');
+			echo form_textarea('content', set_value('content', $blog->content), 'class="form-control"');
 			echo '</div>';
 
 			echo '<div class="form-group">';
@@ -40,7 +43,6 @@
 			echo '</div>';
 
 			echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"');
-
 			echo form_close(); ?>
 		</div>
 	</div>
