@@ -17,21 +17,31 @@
 	<div class="row justify-content-center">
 		<div class="col-md-8">
 			<h1>Edit Artikel</h1>
-			<form action="" method="post">
-				<div class="form-group">
-					<label for="">Judul</label>
-					<input class="form-control" type="text" name="title" value="<?php echo $blog->title; ?>">
-				</div>
-				<div class="form-group">
-					<label for="">URL</label>
-					<input class="form-control" type="text" name="url" value="<?php echo $blog->url; ?>">
-				</div>
-				<div class="form-group">
-					<label for="">Konten</label>
-					<textarea class="form-control" name="content" id="" cols="30" rows="10"><?php echo $blog->content; ?></textarea>
-				</div>
-				<button class="btn btn-primary" type="submit">Edit Artikel</button>
-			</form>
+			<?php echo form_open_multipart();
+
+			echo '<div class="form-group">';
+			echo form_label('Judul', 'title');
+			echo form_input('title', $blog->title, 'class="form-control"');
+			echo '</div>';
+
+			echo '<div class="form-group">';
+			echo form_label('URL', 'url');
+			echo form_input('url', $blog->url, 'class="form-control"');
+			echo '</div>';
+
+			echo '<div class="form-group">';
+			echo form_label('Konten', 'content');
+			echo form_textarea('content', $blog->content, 'class="form-control"');
+			echo '</div>';
+
+			echo '<div class="form-group">';
+			echo form_label('Cover', 'cover');
+			echo form_upload('cover', $blog->cover, 'class="form-control"');
+			echo '</div>';
+
+			echo form_submit('submit', 'Simpan Artikel', 'class="btn btn-primary"');
+
+			echo form_close(); ?>
 		</div>
 	</div>
 </div>
