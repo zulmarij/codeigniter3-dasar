@@ -39,6 +39,7 @@
 				</div>
 				<hr>
 			<?php endforeach; ?>
+			<?php echo $this->pagination->create_links(); ?>
 			<!-- Pager -->
 			<div class="clearfix">
 				<a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
